@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import Button from "./Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,6 +10,11 @@ function App() {
     setCount((prev) => prev + 1);
     console.log(count);
   };
+
+  const onlyonce = () => {
+    console.log("i run onlyonce");
+  };
+  useEffect(onlyonce, []);
 
   return (
     <div>
