@@ -5,22 +5,32 @@ import Button from "./Button";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const onClick = () => {
-    setCount((prev) => prev + 1);
-    console.log(count);
+  const [todo, setTodo] = useState("");
+  const [toDos, setToDos] = useState([]);
+  const onChange = (event) => {
+    setTodo(event.target.value);
+    //console.log(todo);
   };
+  const onSubmit = (event) => {
+    event.preventDefault();
 
-  const onlyonce = () => {
-    console.log("i run onlyonce");
+    if (todo == "") {
+      return;
+    }
+    setToDos((currentArray) => [todo, ...currentArray]);
+    setTodo("");
+    console.log(toDos);
   };
-  useEffect(onlyonce, []);
-
   return (
-    <div>
-      <h1>{count}</h1>
-      <button onClick={onClick}>click me!</button>
-    </div>
+    <form onSubmit={onSubmit}>
+      <input
+        onChange={onChange}
+        value={todo}
+        type="text"
+        placeholder="Write ypur toDos"
+      ></input>
+      <button>Add To do</button>
+    </form>
   );
 }
 
