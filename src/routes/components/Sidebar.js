@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./sidebar.module.css";
 
-const Sidebar = ({ width = 280, children }) => {
+function Sidebar({ width = 280, children }) {
   const [isOpen, setOpen] = useState(false);
   const [xPosition, setX] = useState(width);
   const side = useRef();
@@ -53,6 +53,6 @@ const Sidebar = ({ width = 280, children }) => {
       </div>
     </div>
   );
-};
+}
 
 export default Sidebar;
