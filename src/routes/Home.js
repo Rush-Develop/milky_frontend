@@ -7,7 +7,7 @@ import Header from "./components/Header";
 function Home() {
   return (
     <div>
-      <Sidebar width={300} />
+      <Sidebar width={360} />
       <div className={styles.grid}>
         <Header />
         <div className={styles.Main}>Main</div>

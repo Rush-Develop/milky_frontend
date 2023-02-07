@@ -4,9 +4,7 @@
 .Main {
   grid-area: main;
 }
-/* .Right {
-  grid-area: right;
-} */
+
 .Footer {
   grid-area: footer;
 }
