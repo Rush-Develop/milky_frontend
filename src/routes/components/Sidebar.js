@@ -3,16 +3,16 @@ import styles from "./sidebar.module.css";
 
 const Sidebar = ({ width = 280, children }) => {
   const [isOpen, setOpen] = useState(false);
-  const [xPosition, setX] = useState(-width);
+  const [xPosition, setX] = useState(width);
   const side = useRef();
 
   // button 클릭 시 토글
   const toggleMenu = () => {
-    if (xPosition < 0) {
+    if (xPosition > 0) {
       setX(0);
       setOpen(true);
     } else {
-      setX(-width);
+      setX(width);
       setOpen(false);
     }
   };
@@ -22,7 +22,7 @@ const Sidebar = ({ width = 280, children }) => {
     let sideArea = side.current;
     let sideCildren = side.current.contains(e.target);
     if (isOpen && (!sideArea || !sideCildren)) {
-      await setX(-width);
+      await setX(width);
       await setOpen(false);
     }
   };
@@ -46,18 +46,10 @@ const Sidebar = ({ width = 280, children }) => {
         }}
       >
         <button onClick={() => toggleMenu()} className={styles.button}>
-          {isOpen ? (
-            <span>X</span>
-          ) : (
-            <img
-              src="images/avatar.png"
-              alr="contact open button"
-              className={styles.openBtn}
-            />
-          )}
+          {isOpen ? <span>X</span> : <span>☰</span>}
         </button>
-        <div className={styles.content}>{children}</div> //사이드바 컴포넌트
-        내부 값이 구현되는 위치
+
+        <div className={styles.content}>{children}</div>
       </div>
     </div>
   );

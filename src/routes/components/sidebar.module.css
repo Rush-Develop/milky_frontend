@@ -3,11 +3,11 @@
 }
 .sidebar {
   background-color: #e3ecf1;
-  border-left: 4px solid #202020;
+  border-right: 4px solid #202020;
   position: fixed;
   top: 0;
   bottom: 0;
-  right: 0;
+  left: 0;
   transition: 0.4s ease;
   color: #202020;
   height: 100%;
@@ -15,7 +15,7 @@
 }
 .button {
   position: relative;
-  left: -50px;
+  left: 310px;
   top: 10px;
   width: 40px;
   height: 40px;

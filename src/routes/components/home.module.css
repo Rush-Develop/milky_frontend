@@ -1,25 +1,22 @@
 .Header {
   grid-area: header;
 }
-.Menu {
-  grid-area: menu;
-}
 .Main {
   grid-area: main;
 }
-.Right {
+/* .Right {
   grid-area: right;
-}
+} */
 .Footer {
   grid-area: footer;
 }
 
-.grid-container {
+.grid {
   display: grid;
   grid-template-areas:
     "header header header header header header"
-    "menu main main main right right"
-    "menu footer footer footer footer footer";
+    "main main main main main main"
+    "footer footer footer footer footer footer";
   gap: 10px;
   background-color: #2196f3;
   padding: 10px;
@@ -29,8 +26,8 @@
   letter-spacing: -0.2px;
 }
 
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+.grid > div {
+  background-color: white;
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
