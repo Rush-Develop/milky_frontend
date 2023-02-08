@@ -3,6 +3,7 @@
 }
 .Main {
   grid-area: main;
+  height: 1200px;
 }
 
 .Footer {
@@ -29,4 +30,11 @@
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
+}
+
+.section {
+  border: 10px solid red;
+  padding: 5px;
+  margin: 5px;
+  height: 570px;
 }
