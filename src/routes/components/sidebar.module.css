@@ -21,8 +21,9 @@
   height: 40px;
   z-index: 99;
   transition: 0.8s ease;
-  border: 2px solid #202020;
-  border-radius: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid rgba(0, 0, 0, 0);
+  /* border-radius: 40px; */
   overflow: hidden;
 }
 .openBtn {
@@ -30,10 +31,25 @@
   height: 100%;
 }
 .content {
-  padding: 40px 40px 0 20px;
-  position: relative;
-  width: 100%;
+  /* width: 50%; */
+  position: fixed;
+  right: 5rem;
+  margin-top: 70px;
+  border: 2px solid red;
+  font-size: 30px;
+  color: whitesmoke;
 }
+
+.content div {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid red; */
+}
+
+span {
+  font-size: 30px;
+}
+
 .icon {
   margin: 0;
   color: #202020;
