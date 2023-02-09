@@ -1,9 +1,10 @@
 import styles from "../components/home.module.css";
+import Menu from "./Menu";
 
 function Header() {
   return (
     <div className={styles.Header}>
-      <img
+      {/* <img
         className={styles.Logo}
         src="assets/img/logo.jpeg"
         alt="logo"
@@ -13,8 +14,9 @@ function Header() {
           margin: 0,
           padding: 0,
         }}
-      />
-      {/* Logo */}
+      /> */}
+      Logo
+      {/* <Menu /> */}
     </div>
   );
 }

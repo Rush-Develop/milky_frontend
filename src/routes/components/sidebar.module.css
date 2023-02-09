@@ -35,7 +35,7 @@
   position: fixed;
   right: 5rem;
   margin-top: 70px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   font-size: 30px;
   color: whitesmoke;
 }
@@ -48,6 +48,7 @@
 
 span {
   font-size: 30px;
+  color: whitesmoke;
 }
 
 .icon {

@@ -2,47 +2,30 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* height: 100px; */
+  padding-top: 10px;
+  height: 70px;
   width: 100%;
-  /* background-color: #ddd; */
-  border: 10px solid red;
+  background: black;
+  /* border: 10px solid red; */
   text-align: center;
+  font-size: 45px;
+  color: whitesmoke;
+  display: block;
 }
-/*
-.Main {
-  grid-area: main;
-}
-
-.Footer {
-  grid-area: footer;
-}*/
 
 .grid {
-  /* display: grid;
-  grid-template-areas:
-    "header header header header header header"
-    "main main main main main main"
-    "footer footer footer footer footer footer";
-  gap: 10px;
-  background-color: #2196f3;
-  padding: 10px;
-  position: relative; */
   width: 1130px;
   margin: 0 auto;
   letter-spacing: -0.2px;
 }
 
 .grid > div {
-  /* background-color: blue; */
   text-align: center;
-  /* padding: 20px 0; */
   font-size: 30px;
 }
 
 .section {
   padding-top: 95px;
-  border: 10px solid red;
-  /* padding: 5px; */
   margin: 5px;
   height: 700px;
 }
