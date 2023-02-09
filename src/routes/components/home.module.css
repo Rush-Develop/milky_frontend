@@ -7,10 +7,16 @@
   width: 100%;
   background: black;
   /* border: 10px solid red; */
-  text-align: center;
+  /* text-align: center; */
   font-size: 45px;
   color: whitesmoke;
   display: block;
+}
+
+.Logo {
+  position: fixed;
+  top: 20px;
+  left: 50px;
 }
 
 .grid {

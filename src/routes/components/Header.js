@@ -15,7 +15,7 @@ function Header() {
           padding: 0,
         }}
       /> */}
-      Logo
+      <span className={styles.Logo}>Logo</span>
       {/* <Menu /> */}
     </div>
   );
