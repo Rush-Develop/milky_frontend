@@ -16,7 +16,7 @@ function Header() {
         }}
       /> */}
       <span className={styles.Logo}>Logo</span>
-      {/* <Menu /> */}
+      <Menu />
     </div>
   );
 }
