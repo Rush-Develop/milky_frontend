@@ -1,17 +1,24 @@
 .Header {
-  grid-area: header;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* height: 100px; */
+  width: 100%;
+  /* background-color: #ddd; */
+  border: 10px solid red;
+  text-align: center;
 }
+/*
 .Main {
   grid-area: main;
-  /* height: 1200px; */
 }
 
 .Footer {
   grid-area: footer;
-}
+}*/
 
 .grid {
-  display: grid;
+  /* display: grid;
   grid-template-areas:
     "header header header header header header"
     "main main main main main main"
@@ -19,22 +26,23 @@
   gap: 10px;
   background-color: #2196f3;
   padding: 10px;
-  position: relative;
+  position: relative; */
   width: 1130px;
   margin: 0 auto;
   letter-spacing: -0.2px;
 }
 
 .grid > div {
-  background-color: white;
+  /* background-color: blue; */
   text-align: center;
-  padding: 20px 0;
+  /* padding: 20px 0; */
   font-size: 30px;
 }
 
 .section {
+  padding-top: 95px;
   border: 10px solid red;
-  padding: 5px;
+  /* padding: 5px; */
   margin: 5px;
-  height: 570px;
+  height: 700px;
 }

@@ -13,8 +13,8 @@ function Home() {
       <Sidebar width={360}>
         <Menu />
       </Sidebar>
+      <Header />
       <div className={styles.grid}>
-        <Header />
         <div className={styles.Main}>
           <div id="1">
             <Section cnt="1" />
