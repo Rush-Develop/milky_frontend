@@ -4,7 +4,6 @@ import Modal from "react-modal";
 
 function LoginModal() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
   return (
     <>
       <button onClick={() => setModalIsOpen(true)} className={styles.Login}>
