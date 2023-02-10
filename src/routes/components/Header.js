@@ -1,9 +1,10 @@
 import styles from "../components/css/home.module.css";
 import Menu from "./elements/Menu";
-import Login from "./elements/LoginModal";
+import LoginModal from "./elements/LoginModal";
 import { useMediaQuery } from "react-responsive";
 import Sidebar from "./elements/Sidebar";
 import Sidemenu from "./elements/Sidemenu";
+import React, { useEffect, useState } from "react";
 
 export const Small = ({ children }) => {
   const isSmall = useMediaQuery({
@@ -20,6 +21,16 @@ export const Big = ({ children }) => {
 };
 
 function Header() {
+  // useState를 사용하여 open상태를 변경한다. (open일때 true로 만들어 열리는 방식)
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => {
+    setModalOpen(true);
+  };
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <>
       <Small>
@@ -36,7 +47,7 @@ function Header() {
         }}
       /> */}
           <span className={styles.Logo}>Logo</span>
-          <Login />
+          <LoginModal />
           <Sidebar width={360}>
             <Sidemenu />
           </Sidebar>
@@ -57,7 +68,7 @@ function Header() {
       /> */}
           <span className={styles.Logo}>Logo</span>
           <Menu />
-          <Login />
+          <LoginModal />
         </div>
       </Big>
     </>
