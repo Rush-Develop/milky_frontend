@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import Movie from "./Movie";
-import Sidebar from "./components/Sidebar";
-import styles from "./components/home.module.css";
+import styles from "./components/css/home.module.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Section from "./components/Section";

@@ -1,4 +1,4 @@
-import styles from "../components/home.module.css";
+import styles from "../css/home.module.css";
 
 function LoginModal() {
   return <div className={styles.Login}>👥</div>;

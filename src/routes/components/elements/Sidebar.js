@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./sidebar.module.css";
+import styles from "../css/sidebar.module.css";
 
-function Sidebar({ width = 280, children }) {
+function Sidebar({ width, children }) {
   const [isOpen, setOpen] = useState(false);
   const [xPosition, setX] = useState(-width);
   const side = useRef();

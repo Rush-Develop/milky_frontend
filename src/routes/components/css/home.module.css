@@ -38,8 +38,9 @@
   border: 10px solid red;
 }
 
-/* .Login {
-  top: 0;
-  left: 1000px;
-  padding-top: 5px;
-} */
+.Login {
+  position: fixed;
+  top: 10px;
+  right: 60px;
+  border: 1px solid red;
+}

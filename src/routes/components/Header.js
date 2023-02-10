@@ -1,28 +1,28 @@
-import styles from "../components/home.module.css";
-import Menu from "./Menu";
-import Login from "./LoginModal";
+import styles from "../components/css/home.module.css";
+import Menu from "./elements/Menu";
+import Login from "./elements/LoginModal";
 import { useMediaQuery } from "react-responsive";
-import Sidebar from "./Sidebar";
-import Sidemenu from "./Sidemenu";
+import Sidebar from "./elements/Sidebar";
+import Sidemenu from "./elements/Sidemenu";
 
-export const Mobile = ({ children }) => {
-  const isMobile = useMediaQuery({
+export const Small = ({ children }) => {
+  const isSmall = useMediaQuery({
     query: "(max-width:981px)",
   });
-  return <>{isMobile && children}</>;
+  return <>{isSmall && children}</>;
 };
 
-export const Pc = ({ children }) => {
-  const isPc = useMediaQuery({
+export const Big = ({ children }) => {
+  const isBig = useMediaQuery({
     query: "(min-width:980px)",
   });
-  return <>{isPc && children}</>;
+  return <>{isBig && children}</>;
 };
 
 function Header() {
   return (
     <>
-      <Mobile>
+      <Small>
         <div className={styles.Header}>
           {/* <img
         className={styles.Logo}
@@ -36,12 +36,13 @@ function Header() {
         }}
       /> */}
           <span className={styles.Logo}>Logo</span>
+          <Login />
           <Sidebar width={360}>
             <Sidemenu />
           </Sidebar>
         </div>
-      </Mobile>
-      <Pc>
+      </Small>
+      <Big>
         <div className={styles.Header}>
           {/* <img
         className={styles.Logo}
@@ -56,8 +57,9 @@ function Header() {
       /> */}
           <span className={styles.Logo}>Logo</span>
           <Menu />
+          <Login />
         </div>
-      </Pc>
+      </Big>
     </>
   );
 }
