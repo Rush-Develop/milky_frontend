@@ -6,7 +6,7 @@
   height: 70px;
   width: 100%;
   background: black;
-  /* border: 10px solid red; */
+  border: 1px solid red;
   /* text-align: center; */
   font-size: 45px;
   color: whitesmoke;
@@ -37,3 +37,9 @@
   height: 700px;
   border: 10px solid red;
 }
+
+/* .Login {
+  top: 0;
+  left: 1000px;
+  padding-top: 5px;
+} */

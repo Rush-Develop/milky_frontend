@@ -48,8 +48,7 @@ function Sidebar({ width = 280, children }) {
         <button onClick={() => toggleMenu()} className={styles.button}>
           {isOpen ? <span>X</span> : <span>☰</span>}
         </button>
-        <div className={styles.content}>{children}</div> //사이드바 컴포넌트
-        내부 값이 구현되는 위치
+        <div className={styles.content}>{children}</div>
       </div>
     </div>
   );
