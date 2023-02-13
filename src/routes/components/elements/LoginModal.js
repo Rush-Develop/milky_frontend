@@ -1,87 +1,51 @@
-import React, { useEffect, useState } from "react";
+import * as React from "react";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 import styles from "../css/home.module.css";
-import Modal from "react-modal";
 
-function LoginModal() {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [state, setState] = useState({
-    email: "",
-    password: "",
-  });
-  console.log("렌더링");
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setState((prevState) => ({
-      ...prevState,
-      [id]: value,
-    }));
+export default function FormDialog() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
   };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
-    <>
-      <button onClick={() => setModalIsOpen(true)} className={styles.Login}>
-        로그인
-      </button>
-      <Modal
-        closeTimeoutMS={200}
-        isOpen={modalIsOpen}
-        onRequestClose={() => setModalIsOpen(false)}
-        style={{
-          overlay: {
-            position: "fixed",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-          },
-          content: {
-            position: "absolute",
-            top: "200px",
-            left: "400px",
-            right: "400px",
-            bottom: "300px",
-            border: "1px solid #ccc",
-            background: "#fff",
-            overflow: "auto",
-            WebkitOverflowScrolling: "touch",
-            borderRadius: "4px",
-            outline: "none",
-            padding: "20px",
-            border: "1px solid red",
-          },
-        }}
-      >
-        <button onClick={() => setModalIsOpen(false)} className={styles.Login}>
-          로그인
-        </button>
-        <p className={styles.Modal}>
-          <form style={{ textAlign: "center", paddingTop: "50px" }}>
-            <p className={styles.UI}>
-              <input
-                type="text"
-                id="email"
-                placeholder="Enter email"
-                value={state.email}
-                onChange={handleChange}
-              />
-            </p>
-            <p className={styles.UI}>
-              <input
-                type="password"
-                id="password"
-                placeholder="Password"
-                value={state.password}
-                onChange={handleChange}
-              />
-            </p>
-            <p className={styles.UI}>
-              <input type="submit" value="Login" />
-            </p>
-          </form>
-        </p>
-      </Modal>
-    </>
+    <div className={styles.modal}>
+      <Button variant="outlined" onClick={handleClickOpen}>
+        Open form dialog
+      </Button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Subscribe</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To subscribe to this website, please enter your email address here.
+            We will send updates occasionally.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Subscribe</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
   );
 }
-
-export default LoginModal;
