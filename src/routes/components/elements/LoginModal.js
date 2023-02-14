@@ -26,20 +26,23 @@ export default function FormDialog() {
 
   return (
     <div className={styles.modal}>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Login
+      <Button variant="text" onClick={handleClickOpen}>
+        Log-in
       </Button>
       <Dialog
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <DialogTitle>Login</DialogTitle>
+        <DialogTitle>Log-in</DialogTitle>
         <DialogContent>
           {/* <DialogContentText>
             To subscribe to this website, please enter your email address here.
             We will send updates occasionally.
           </DialogContentText> */}
+          <Button className={styles.Cancel} onClick={handleClose}>
+            X
+          </Button>
           <TextField
             autoFocus
             margin="dense"
@@ -60,7 +63,6 @@ export default function FormDialog() {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleClose}>Login</Button>
         </DialogActions>
       </Dialog>

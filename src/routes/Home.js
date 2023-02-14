@@ -3,10 +3,11 @@ import styles from "./components/css/home.module.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Section from "./components/Section";
+import TopButton from "./components/elements/TopButton";
 
 function Home() {
   return (
-    <div>
+    <div className={styles.all}>
       <Header />
       <div className={styles.grid}>
         <div className={styles.Main}>
@@ -22,6 +23,7 @@ function Home() {
           <div id="4">
             <Section cnt="4" />
           </div>
+          <TopButton />
         </div>
         <div className={styles.Footer}>Footer</div>
       </div>

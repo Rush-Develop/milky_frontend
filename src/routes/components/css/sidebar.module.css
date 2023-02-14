@@ -22,7 +22,7 @@
   z-index: 99;
   transition: 0.8s ease;
   background-color: rgba(0, 0, 0, 0);
-  border: 2px solid red;
+  border: 2px solid black;
   /* border-radius: 40px; */
   overflow: hidden;
 }
@@ -36,7 +36,7 @@
   position: fixed;
   right: 5rem;
   margin-top: 100px;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   font-size: 30px;
   color: whitesmoke;
 }
@@ -44,7 +44,7 @@
 .content div {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 span {
