@@ -11,7 +11,7 @@
   height: 70px;
   width: 100%;
   background: black;
-  /* border: 1px solid red; */
+  border: 1px solid red;
   /* text-align: center; */
   font-size: 45px;
   color: whitesmoke;
@@ -22,7 +22,8 @@
   position: fixed;
   top: 20px;
   left: 50px;
-  /* border: 1px solid red; */
+  text-align: center;
+  border: 1px solid red;
 }
 
 .grid {
@@ -40,7 +41,7 @@
   padding-top: 95px;
   margin: 5px;
   height: 700px;
-  /* border: 10px solid red; */
+  border: 10px solid red;
 }
 
 .scroll__container {
@@ -68,8 +69,8 @@
 
 .Login {
   position: fixed;
-  top: 10px;
-  right: 60px;
+  top: 20px;
+  right: 50px;
   /* border: 1px solid red; */
   background-color: rgba(0, 0, 0, 0);
   width: 60px;
@@ -116,13 +117,13 @@ input[type="password"] {
 .modal {
   position: fixed;
   /* border: 1px solid red; */
-  top: 10px;
+  top: 15px;
   right: 50px;
 }
 
-.Cancel {
+/* .Cancel {
   position: absolute;
   top: 0;
   right: 0;
-  /* border: 1px solid red; */
-}
+  border: 1px solid red;
+} */

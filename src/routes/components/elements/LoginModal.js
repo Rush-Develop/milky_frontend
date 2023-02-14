@@ -40,9 +40,9 @@ export default function FormDialog() {
             To subscribe to this website, please enter your email address here.
             We will send updates occasionally.
           </DialogContentText> */}
-          <Button className={styles.Cancel} onClick={handleClose}>
+          {/* <Button className={styles.Cancel} onClick={handleClose}>
             X
-          </Button>
+          </Button> */}
           <TextField
             autoFocus
             margin="dense"
