@@ -26,7 +26,6 @@ function Sidebar({ width, children }) {
       await setOpen(false);
     }
   };
-
   useEffect(() => {
     window.addEventListener("click", handleClose);
     return () => {
