@@ -21,13 +21,13 @@ function App() {
   };
   return (
     <div>
-      {/* <Router>
+      <Router>
         <Switch>
           <Route path="/">
             <Home />
           </Route>
         </Switch>
-      </Router> */}
+      </Router>
       <input onChange={handleChange} name="id" />
       <button onClick={submitId}>Submit</button>
       <h1>{id}</h1>
