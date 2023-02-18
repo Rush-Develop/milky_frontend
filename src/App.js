@@ -2,23 +2,37 @@ import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./routes/Home";
 function App() {
-  const [id, setId] = useState("");
-  const handleChange = (event) => {
-    setId(event.target.value);
-  };
-  const submitId = () => {
-    const post = {
-      plzid: id,
-    };
+  const fragment = new URLSearchParams(window.location.hash.slice(1));
+  const [accessToken, tokenType] = [
+    fragment.get("access_token"),
+    fragment.get("token_type"),
+  ];
 
-    fetch("http://localhost:3001/idplz", {
-      method: "post", // 통신방법
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(post),
-    });
-  };
+  // if (!accessToken) {
+  //   window.location.href = "/";
+  // }
+
+  fetch("https://discord.com/api/users/@me", {
+    headers: {
+      authorization: `${tokenType} ${accessToken}`,
+    },
+  })
+    .then((result) => result.json())
+    .then((response) => {
+      console.log(response);
+      const { username, discriminator, avatar, id } = response;
+      //set the welcome username string
+      // document.getElementById(
+      //   "name"
+      // ).innerText = ` ${username}#${discriminator}`;
+
+      // //set the avatar image by constructing a url to access discord's cdn
+      // document.getElementById(
+      //   "avatar"
+      // ).src = `https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`;
+    })
+    .catch(console.error);
+
   return (
     <div>
       <Router>
@@ -28,9 +42,6 @@ function App() {
           </Route>
         </Switch>
       </Router>
-      <input onChange={handleChange} name="id" />
-      <button onClick={submitId}>Submit</button>
-      <h1>{id}</h1>
     </div>
   );
 }

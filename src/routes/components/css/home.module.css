@@ -119,6 +119,7 @@ input[type="password"] {
   /* border: 1px solid red; */
   top: 15px;
   right: 50px;
+  text-decoration-line: none;
 }
 
 /* .Cancel {

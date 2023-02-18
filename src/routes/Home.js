@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Section from "./components/Section";
 import TopButton from "./components/elements/TopButton";
 
-function Home() {
+function Home(props) {
   return (
     <div className={styles.all}>
       <Header />

@@ -13,6 +13,11 @@ app.get("/auth/discord", (request, response) => {
   return response.sendFile("dashboard.html", { root: "." });
 });
 
+app.post("/idplz", (req, res) => {
+  const serverid = req.body.plzid;
+  console.log(serverid);
+});
+
 const port = "3001";
 app.listen(port, () =>
   console.log(`App listening at http://localhost:${port}`)
