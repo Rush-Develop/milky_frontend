@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./routes/Home";
 function App() {
   const fragment = new URLSearchParams(window.location.hash.slice(1));
+  const [Id, setId] = useState("");
+  const [username, setUsername] = useState("");
+  const [avatar, setAvatar] = useState("");
+
   const [accessToken, tokenType] = [
     fragment.get("access_token"),
     fragment.get("token_type"),
@@ -20,7 +24,11 @@ function App() {
     .then((result) => result.json())
     .then((response) => {
       console.log(response);
-      const { username, discriminator, avatar, id } = response;
+      setId(response.id);
+      setUsername(response.username);
+      setAvatar(response.avatar);
+      // const { username, discriminator, avatar, id } = response;
+
       //set the welcome username string
       // document.getElementById(
       //   "name"
@@ -38,7 +46,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/">
-            <Home />
+            <Home id={Id} username={username} />
           </Route>
         </Switch>
       </Router>
