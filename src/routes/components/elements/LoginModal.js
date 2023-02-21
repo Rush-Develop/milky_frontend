@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Button from "@mui/material/Button";
 import styles from "../css/home.module.css";
 
@@ -12,6 +12,7 @@ function LoginModal(props) {
   } else {
     console.log(props.id);
     console.log(props.username);
+    console.log(props.avatar);
   }
 
   return (
@@ -27,7 +28,20 @@ function LoginModal(props) {
           </Button>
         </a>
       ) : (
-        <span className={styles.profile}>{props.username}님 안녕하세요!</span>
+        <span className={styles.profile}>
+          <Button
+            variant="contained"
+            className={styles.button}
+            sx={{ borderRadius: 50 }}
+          >
+            <img
+              src={`https://cdn.discordapp.com/avatars/${props.id}/${props.avatar}.jpg`}
+              alt="my"
+              width={"70px"}
+            />
+          </Button>
+        </span>
+        // <span className={styles.profile}>{props.username}님 안녕하세요!</span>
       )}
     </div>
   );

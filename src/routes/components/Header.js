@@ -22,16 +22,6 @@ export const Big = ({ children }) => {
 };
 
 function Header(props) {
-  // useState를 사용하여 open상태를 변경한다. (open일때 true로 만들어 열리는 방식)
-  // const [modalOpen, setModalOpen] = useState(false);
-
-  // const openModal = () => {
-  //   setModalOpen(true);
-  // };
-  // const closeModal = () => {
-  //   setModalOpen(false);
-  // };
-
   return (
     <>
       <Small>
@@ -48,8 +38,11 @@ function Header(props) {
         }}
       /> */}
           <span className={styles.Logo}>Logo</span>
-          <LoginModal id={props.id} username={props.username} />
-          {/* <DiscordLogin /> */}
+          <LoginModal
+            id={props.id}
+            username={props.username}
+            avatar={props.avatar}
+          />
           <Sidebar width={360}>
             <Sidemenu />
           </Sidebar>
@@ -70,8 +63,11 @@ function Header(props) {
       /> */}
           <span className={styles.Logo}>Logo</span>
           <Menu />
-          <LoginModal id={props.id} username={props.username} />
-          {/* <DiscordLogin /> */}
+          <LoginModal
+            id={props.id}
+            username={props.username}
+            avatar={props.avatar}
+          />
         </div>
       </Big>
     </>

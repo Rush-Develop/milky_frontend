@@ -8,7 +8,7 @@ import TopButton from "./components/elements/TopButton";
 function Home(props) {
   return (
     <div className={styles.all}>
-      <Header id={props.id} username={props.username} />
+      <Header id={props.id} username={props.username} avatar={props.avatar} />
       <div className={styles.grid}>
         <div className={styles.Main}>
           <div id="1">
