@@ -9,7 +9,6 @@ function LoginModal(props) {
     },
   };
   if (props.id === undefined) {
-    console.log("없다 ");
   } else {
     console.log(props.id);
     console.log(props.username);
@@ -28,7 +27,7 @@ function LoginModal(props) {
           </Button>
         </a>
       ) : (
-        props.username
+        <span className={styles.profile}>{props.username}님 안녕하세요!</span>
       )}
     </div>
   );

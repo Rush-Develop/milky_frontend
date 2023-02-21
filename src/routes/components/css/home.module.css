@@ -128,3 +128,10 @@ input[type="password"] {
   right: 0;
   border: 1px solid red;
 } */
+
+.profile {
+  position: fixed;
+  top: 30px;
+  right: 50px;
+  font-size: 20px;
+}
