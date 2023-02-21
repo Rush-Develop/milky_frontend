@@ -32,7 +32,7 @@ function LoginModal(props) {
           <Button
             variant="contained"
             className={styles.button}
-            sx={{ borderRadius: 50 }}
+            sx={{ borderRadius: 28 }}
           >
             <img
               src={`https://cdn.discordapp.com/avatars/${props.id}/${props.avatar}.jpg`}
