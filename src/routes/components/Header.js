@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import Sidebar from "./elements/Sidebar";
 import Sidemenu from "./elements/Sidemenu";
 import React, { useEffect, useState } from "react";
+import DiscordLoginModal from "./elements/DiscordLogin";
 // import DiscordLogin from "./elements/DiscordLogin";
 
 export const Small = ({ children }) => {
@@ -43,6 +44,7 @@ function Header(props) {
             username={props.username}
             avatar={props.avatar}
           />
+          {/* <DiscordLoginModal /> */}
           <Sidebar width={360}>
             <Sidemenu />
           </Sidebar>
@@ -68,6 +70,7 @@ function Header(props) {
             username={props.username}
             avatar={props.avatar}
           />
+          {/* <DiscordLoginModal /> */}
         </div>
       </Big>
     </>

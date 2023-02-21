@@ -13,7 +13,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Zoom timeout={1000} ref={ref} {...props} />;
 });
 
-function DiscordLoginModal() {
+export default function FormDialog() {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -24,21 +24,22 @@ function DiscordLoginModal() {
     setOpen(false);
   };
 
-  const styled = {
-    "&.MuiButton-text": {
-      color: "white",
-    },
-  };
-
   return (
     <div className={styles.modal}>
+      <Button variant="outlined" onClick={handleClickOpen}>
+        Login
+      </Button>
       <Dialog
         open={open}
         onClose={handleClose}
         TransitionComponent={Transition}
       >
-        <DialogTitle>Log-in</DialogTitle>
+        <DialogTitle>Login</DialogTitle>
         <DialogContent>
+          {/* <DialogContentText>
+            To subscribe to this website, please enter your email address here.
+            We will send updates occasionally.
+          </DialogContentText> */}
           <TextField
             autoFocus
             margin="dense"
@@ -59,11 +60,10 @@ function DiscordLoginModal() {
           />
         </DialogContent>
         <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
           <Button onClick={handleClose}>Login</Button>
         </DialogActions>
       </Dialog>
     </div>
   );
 }
-
-export default DiscordLoginModal;

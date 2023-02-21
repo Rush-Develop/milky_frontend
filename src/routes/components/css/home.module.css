@@ -114,13 +114,13 @@ input[type="password"] {
   border-radius: 10px;
 } */
 
-/* .modal {
+.modal {
   position: fixed;
   border: 1px solid red;
   top: 15px;
   right: 50px;
   text-decoration-line: none;
-} */
+}
 
 /* .Cancel {
   position: absolute;
