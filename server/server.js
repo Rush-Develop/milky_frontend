@@ -10,7 +10,7 @@ app.get("/", (request, response) => {
 });
 
 app.get("/auth/discord", (request, response) => {
-  return response.sendFile("dashboard.html", { root: "." });
+  return response.redirect("http://localhost:3000");
 });
 
 app.post("/idplz", (req, res) => {
