@@ -15,6 +15,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 function LoginModal(props) {
   const [open, setOpen] = useState(false);
+  const [username, setUsername] = useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -28,6 +29,7 @@ function LoginModal(props) {
       color: "white",
     },
   };
+
   // if (props.id === undefined) {
   // } else {
   //   console.log(props.id);
@@ -36,7 +38,7 @@ function LoginModal(props) {
   // }
 
   return (
-    <div className={styles.modal}>
+    <div className={styles.headprofile}>
       {props.id === undefined ? (
         <a
           id="login"
@@ -66,30 +68,37 @@ function LoginModal(props) {
             onClose={handleClose}
             TransitionComponent={Transition}
           >
-            {/* <DialogTitle>Login</DialogTitle> */}
-            <DialogContent>
-              {/* <DialogContentText>
-            To subscribe to this website, please enter your email address here.
-            We will send updates occasionally.
-          </DialogContentText> */}
-              {/* <TextField
-                autoFocus
-                margin="dense"
-                id="name"
-                label="Email Address"
-                type="email"
-                fullWidth
-                variant="standard"
-              />
-              <TextField
-                autoFocus
-                margin="dense"
-                id="name"
-                label="Password"
-                type="password"
-                fullWidth
-                variant="standard"
-              /> */}
+            <DialogTitle>Profile</DialogTitle>
+            <DialogContent style={{ width: "450px" }}>
+              {/* <div className={styles.cardcontainer}> */}
+              <header className={styles.header}>
+                <img
+                  className={styles.profileimg}
+                  src={`https://cdn.discordapp.com/avatars/${props.id}/${props.avatar}.jpg`}
+                  alt="my"
+                  width={"70px"}
+                />
+              </header>
+              <h1 className={styles.boldtext}>
+                {props.username}
+                <span className={styles.normaltext}>{props.age}</span>
+              </h1>
+              <h2 className={styles.normaltext}>{props.city}</h2>
+              <div className={styles.socialcontainer}>
+                <div className={styles.followers}>
+                  <h1 className={styles.boldtext}>{props.followers}</h1>
+                  <h2 className={styles.smallertext}>정보1</h2>
+                </div>
+                <div className={styles.likes}>
+                  <h1 className={styles.boldtext}>{props.likes}</h1>
+                  <h2 className={styles.smallertext}>정보2</h2>
+                </div>
+                <div className={styles.photos}>
+                  <h1 className={styles.boldtext}>{props.photos}</h1>
+                  <h2 className={styles.smallertext}>정보3</h2>
+                </div>
+              </div>
+              {/* </div> */}
             </DialogContent>
             <DialogActions>
               {/* <Button onClick={handleClose}>Cancel</Button>

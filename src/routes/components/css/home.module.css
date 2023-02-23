@@ -12,7 +12,6 @@
   width: 100%;
   background: black;
   /* border: 1px solid red; */
-  /* text-align: center; */
   font-size: 45px;
   color: whitesmoke;
   display: block;
@@ -90,44 +89,13 @@
   box-shadow: 0px 8px 33px #999;
 }
 
-/* input[type="text"],
-input[type="password"] {
-  width: 100%;
-  padding: 15px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  background-color: white;
-  color: black;
-  border-radius: 10px;
-  border: 1px solid black;
-} */
-
-/* input[type="submit"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  background-color: black;
-  color: white;
-  transition: all 0.3s;
-  border-radius: 10px;
-} */
-
-.modal {
+.headprofile {
   position: fixed;
   /* border: 1px solid red; */
   top: 15px;
   right: 50px;
   text-decoration-line: none;
 }
-
-/* .Cancel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border: 1px solid red;
-} */
 
 .profile {
   position: fixed;
@@ -151,4 +119,66 @@ input[type="password"] {
   /* border: 1px solid red; */
   border-radius: 50px;
   overflow: hidden;
+}
+
+.header {
+  background-color: red;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  text-align: center;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.profileimg {
+  margin: auto;
+  width: 100px;
+  border: solid white 4px;
+  border-radius: 50%;
+  margin-top: 75px;
+}
+
+.boldtext {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 10px 20px 0px 20px;
+}
+
+.normaltext {
+  font-weight: normal;
+  font-size: 0.95rem;
+  color: hsl(0, 0%, 50%);
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+/* SOCIAL STATS */
+.smallertext {
+  font-weight: normal;
+  font-size: 0.7rem;
+  color: hsl(0, 0%, 50%);
+  text-align: center;
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+  line-height: 5px;
+}
+
+.socialcontainer {
+  display: flex;
+  border-top: solid rgb(206, 206, 206) 1px;
+  text-align: center;
+}
+
+.followers {
+  flex: 1;
+}
+
+.likes {
+  flex: 1;
+}
+
+.photos {
+  flex: 1;
 }
