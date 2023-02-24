@@ -68,8 +68,8 @@ function LoginModal(props) {
             onClose={handleClose}
             TransitionComponent={Transition}
           >
-            <DialogTitle>Profile</DialogTitle>
-            <DialogContent style={{ width: "450px" }}>
+            {/* <DialogTitle>Profile</DialogTitle> */}
+            <DialogContent style={{ width: "450px", padding: "0" }}>
               {/* <div className={styles.cardcontainer}> */}
               <header className={styles.header}>
                 <img
