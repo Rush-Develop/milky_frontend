@@ -14,13 +14,15 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 function LoginModal() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const [Id, setId] = useState("");
   const [username, setUsername] = useState("");
   const [avatar, setAvatar] = useState("");
 
   // componentDidMount = async () => {
-  //   const response = await fetch("http://date.jsontest.com");
+  //   const response = await fetch(
+  //     "http://localhost:8080/oauth2/authorization/discord"
+  //   );
   //   const body = await response.json();
   //   alert(body.date);
   // };
@@ -31,8 +33,8 @@ function LoginModal() {
     fragment.get("access_token"),
     fragment.get("token_type"),
   ];
-  console.log(accessToken);
-  console.log(tokenType);
+  // console.log(accessToken);
+  // console.log(tokenType);
 
   // if (!accessToken) {
   //   window.location.href = "/";
