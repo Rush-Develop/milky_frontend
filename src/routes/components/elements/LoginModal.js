@@ -19,42 +19,8 @@ function LoginModal() {
   const [username, setUsername] = useState("");
   const [avatar, setAvatar] = useState("");
 
-  // componentDidMount = async () => {
-  //   const response = await fetch(
-  //     "http://localhost:8080/oauth2/authorization/discord"
-  //   );
-  //   const body = await response.json();
-  //   alert(body.date);
-  // };
-
-  const fragment = new URLSearchParams(window.location.hash.slice(1));
-  const [accessToken, tokenType] = [
-    fragment.get("access_token"),
-    fragment.get("token_type"),
-  ];
-  // console.log(accessToken);
-  // console.log(tokenType);
-
-  // if (!accessToken) {
-  //   window.location.href = "/";
-  // }
-
   useEffect(() => {
-    // fetch("https://discord.com/api/users/@me", {
-    //   headers: {
-    //     authorization: `${tokenType} ${accessToken}`,
-    //     // authorization: `nice hello`,
-    //   },
-    // })
-    //   .then((result) => result.json())
-    //   .then((response) => {
-    //     console.log(response);
-    //     setId(response.id);
-    //     setUsername(response.username);
-    //     setAvatar(response.avatar);
-    //   })
-    //   .catch(console.error);
-    fetch("http://localhost:8080/api/logininfo")
+    fetch("/api/logininfo")
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -63,21 +29,14 @@ function LoginModal() {
       })
       .then((data) => {
         console.log(JSON.stringify(data));
+        setId(data.id);
+        setUsername(data.name);
+        setAvatar(data.avatar);
       })
       .catch((error) => {
         console.log(`error: ${error}`);
       });
   }, []);
-  // useEffect(() => {
-  //   fetch("http://localhost:8080/index", {
-  //     method: "GET",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       console.log(1, res);
-  //       // setMovies(res);
-  //     });
-  // }, []);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -97,7 +56,7 @@ function LoginModal() {
       {Id === "" ? (
         <a
           id="login"
-          href="https://discord.com/api/oauth2/authorize?client_id=1060823658832076830&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Flogin%2Foauth2%2Fcode%2Fdiscord&response_type=token&scope=identify%20email"
+          href="http://localhost:8080/oauth2/authorization/discord"
           style={{ textDecoration: "none" }}
         >
           <Button variant="text" sx={styled}>
