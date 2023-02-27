@@ -23,7 +23,7 @@ function App() {
     })
       .then((result) => result.json())
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         setId(response.id);
         setUsername(response.username);
         setAvatar(response.avatar);
