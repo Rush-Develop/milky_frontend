@@ -61,12 +61,6 @@ function LoginModal() {
 
   const handleSummit = (event) => {
     event.preventDefault();
-    // const formData = new FormData();
-    // formData.append("id", id);
-    // formData.append("name", username);
-    // formData.append("age", age);
-    // formData.append("goon", goon);
-    // console.log(formData);
     const userdata = { id: id, name: username, age: age, goon: goon };
     console.log(userdata);
     fetch(`/api/member/update/${id}`, {
@@ -88,7 +82,7 @@ function LoginModal() {
       .then((data) => {
         console.log(data);
       });
-    // handleClose();
+    handleClose();
   };
 
   const handleChangegoon = (event) => {
