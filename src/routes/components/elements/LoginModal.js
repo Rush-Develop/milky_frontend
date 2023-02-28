@@ -69,7 +69,7 @@ function LoginModal() {
     // console.log(formData);
     const userdata = { id: id, name: username, age: age, goon: goon };
     console.log(userdata);
-    fetch(`http://localhost:8080/api/member/update/${id}`, {
+    fetch(`/api/member/update/${id}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
