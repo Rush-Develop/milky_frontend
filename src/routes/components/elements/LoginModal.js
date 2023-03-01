@@ -86,22 +86,38 @@ function LoginModal() {
     handleClose();
   };
 
-  const handleChangegoon = (event) => {
-    setGoon(event.target.value);
-  };
-
-  const handleChangename = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handleChangeage = (event) => {
-    setAge(event.target.value);
+  const handleChange = (e, type) => {
+    const value = e.target.value;
+    if (type === "username") {
+      setUsername(value);
+    } else if (type === "age") {
+      setAge(value);
+    } else {
+      setGoon(value);
+    }
   };
 
   const styled = {
     "&.MuiButton-text": {
-      color: "white",
+      color: "black",
     },
+  };
+
+  const setEmotion = (goon) => {
+    console.log(goon);
+    if (goon === "0") {
+      return "🏆";
+    } else if (goon === "1") {
+      return "👑";
+    } else if (goon === "2") {
+      return "🌈";
+    } else if (goon === "3") {
+      return "💫";
+    } else if (goon === "4") {
+      return "⭐";
+    } else {
+      return "💎";
+    }
   };
 
   return (
@@ -135,9 +151,7 @@ function LoginModal() {
             onClose={handleClose}
             TransitionComponent={Transition}
           >
-            {/* <DialogTitle>Profile</DialogTitle> */}
             <DialogContent style={{ width: "450px", padding: "0" }}>
-              {/* <div className={styles.cardcontainer}> */}
               <header className={styles.header}>
                 <img
                   className={styles.profileimg}
@@ -146,13 +160,23 @@ function LoginModal() {
                   width={"70px"}
                 />
               </header>
+              <p
+                style={{
+                  position: "absolute",
+                  left: "140px",
+                  top: "210px",
+                  // border: "1px solid red",
+                }}
+              >
+                {setEmotion(goon)}
+              </p>
               <h1 className={styles.boldtext}>
                 <TextField
                   id="standard_search"
-                  onChange={handleChangename}
+                  onChange={(e) => handleChange(e, "username")}
                   InputProps={{
                     inputProps: {
-                      style: { textAlign: "Center" },
+                      style: { textAlign: "center" },
                     },
                   }}
                   label="닉네임"
@@ -179,14 +203,15 @@ function LoginModal() {
                       labelId="demo-simple-select-standard-label"
                       id="demo-simple-select-standard"
                       value={goon}
-                      onChange={handleChangegoon}
+                      onChange={(e) => handleChange(e, "goon")}
                       label="Age"
                     >
-                      <MenuItem value={0}>강주력</MenuItem>
-                      <MenuItem value={1}>주력</MenuItem>
-                      <MenuItem value={2}>1군</MenuItem>
-                      <MenuItem value={3}>2군</MenuItem>
-                      <MenuItem value={4}>3군</MenuItem>
+                      <MenuItem value={"0"}>대회팀</MenuItem>
+                      <MenuItem value={"1"}>주력</MenuItem>
+                      <MenuItem value={"2"}>정예</MenuItem>
+                      <MenuItem value={"3"}>1군</MenuItem>
+                      <MenuItem value={"4"}>2군</MenuItem>
+                      <MenuItem value={"5"}>아이템</MenuItem>
                     </Select>
                   </FormControl>
                 </h1>
@@ -199,7 +224,7 @@ function LoginModal() {
                     }}
                     id="standard-search"
                     label="나이"
-                    onChange={handleChangeage}
+                    onChange={(e) => handleChange(e, "age")}
                     defaultValue={age}
                     variant="standard"
                     sx={{

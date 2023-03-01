@@ -27,18 +27,18 @@ function Header() {
     <>
       <Small>
         <div className={styles.Header}>
-          {/* <img
-        className={styles.Logo}
-        src="assets/img/logo.jpeg"
-        alt="logo"
-        style={{
-          width: 100,
-          height: 75,
-          margin: 0,
-          padding: 0,
-        }}
-      /> */}
-          <span className={styles.Logo}>Logo</span>
+          <img
+            className={styles.Logo}
+            src="assets/img/logo.jpeg"
+            alt="logo"
+            style={{
+              width: 100,
+              height: 75,
+              margin: 0,
+              padding: 0,
+            }}
+          />
+          {/* <span className={styles.Logo}>Logo</span> */}
           <LoginModal />
           {/* <DiscordLoginModal /> */}
           <Sidebar width={360}>
@@ -48,18 +48,18 @@ function Header() {
       </Small>
       <Big>
         <div className={styles.Header}>
-          {/* <img
-        className={styles.Logo}
-        src="assets/img/logo.jpeg"
-        alt="logo"
-        style={{
-          width: 100,
-          height: 75,
-          margin: 0,
-          padding: 0,
-        }}
-      /> */}
-          <span className={styles.Logo}>Logo</span>
+          <img
+            className={styles.Logo}
+            src="assets/img/logo.jpeg"
+            alt="logo"
+            style={{
+              width: 100,
+              height: 75,
+              margin: 0,
+              padding: 0,
+            }}
+          />
+          {/* <span className={styles.Logo}>Logo</span> */}
           <Menu />
           <LoginModal />
           {/* <DiscordLoginModal /> */}
