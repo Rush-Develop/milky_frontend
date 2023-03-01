@@ -13,7 +13,7 @@ function Menu() {
 
   const styles = {
     "&.MuiButton-text": {
-      color: "white",
+      color: "black",
     },
   };
   return (

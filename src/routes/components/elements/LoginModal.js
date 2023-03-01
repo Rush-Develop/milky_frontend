@@ -12,6 +12,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Zoom from "@mui/material/Zoom";
 import styles from "../css/home.module.css";
+import { border, borderRadius } from "@mui/system";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Zoom timeout={1000} ref={ref} {...props} />;
@@ -147,14 +148,18 @@ function LoginModal() {
               </header>
               <h1 className={styles.boldtext}>
                 <TextField
-                  required
-                  id="outlined-required"
+                  id="standard_search"
                   onChange={handleChangename}
+                  InputProps={{
+                    inputProps: {
+                      style: { textAlign: "Center" },
+                    },
+                  }}
                   label="닉네임"
                   defaultValue={username}
                   variant="standard"
                   sx={{
-                    width: 300,
+                    width: 100,
                     textAlign: "center",
                   }}
                 />
@@ -187,13 +192,12 @@ function LoginModal() {
                 </h1>
                 <h1 className={styles.boldtext}>
                   <TextField
-                    required
                     InputProps={{
                       inputProps: {
                         style: { textAlign: "Center" },
                       },
                     }}
-                    id="standard-required"
+                    id="standard-search"
                     label="나이"
                     onChange={handleChangeage}
                     defaultValue={age}
@@ -220,8 +224,7 @@ function LoginModal() {
                 </h1>
                 <h1 className={styles.boldtext}>
                   <TextField
-                    required
-                    id="standard-required"
+                    id="standard-search"
                     label="포인트"
                     defaultValue={point}
                     variant="standard"
