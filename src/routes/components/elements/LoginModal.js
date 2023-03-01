@@ -8,11 +8,9 @@ import Select from "@mui/material/Select";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 import Zoom from "@mui/material/Zoom";
+import { GithubPicker } from "react-color";
 import styles from "../css/home.module.css";
-import { border, borderRadius } from "@mui/system";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Zoom timeout={1000} ref={ref} {...props} />;
@@ -20,6 +18,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 function LoginModal() {
   const [open, setOpen] = useState(false);
+  const [pallete, setPallete] = useState(false);
   const [id, setId] = useState(null);
   const [username, setUsername] = useState(null);
   const [avatar, setAvatar] = useState(null);
@@ -60,6 +59,14 @@ function LoginModal() {
     setOpen(false);
   };
 
+  const handlepalleteOpen = () => {
+    setPallete(true);
+  };
+
+  const handlepalleteClose = () => {
+    setPallete(false);
+  };
+
   const handleSummit = (event) => {
     event.preventDefault();
     const userdata = { id: id, name: username, age: age, goon: goon };
@@ -97,12 +104,6 @@ function LoginModal() {
     }
   };
 
-  const styled = {
-    "&.MuiButton-text": {
-      color: "black",
-    },
-  };
-
   const setEmotion = (goon) => {
     console.log(goon);
     if (goon === "0") {
@@ -118,6 +119,12 @@ function LoginModal() {
     } else {
       return "💎";
     }
+  };
+
+  const styled = {
+    "&.MuiButton-text": {
+      color: "black",
+    },
   };
 
   return (
@@ -153,6 +160,21 @@ function LoginModal() {
           >
             <DialogContent style={{ width: "450px", padding: "0" }}>
               <header className={styles.header}>
+                <Button
+                  variant="contained"
+                  className={styles.pallete}
+                  sx={{ position: "absolute", right: "0" }}
+                  onClick={handlepalleteOpen}
+                >
+                  🛠️
+                </Button>
+                <div
+                  open={pallete}
+                  onClose={handlepalleteClose}
+                  TransitionComponent={Transition}
+                >
+                  <GithubPicker />
+                </div>
                 <img
                   className={styles.profileimg}
                   src={`https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`}
@@ -160,17 +182,17 @@ function LoginModal() {
                   width={"70px"}
                 />
               </header>
-              <p
-                style={{
-                  position: "absolute",
-                  left: "140px",
-                  top: "210px",
-                  // border: "1px solid red",
-                }}
-              >
-                {setEmotion(goon)}
-              </p>
               <h1 className={styles.boldtext}>
+                <p
+                  style={{
+                    position: "absolute",
+                    left: "145px",
+                    top: "208px",
+                    // border: "1px solid red",
+                  }}
+                >
+                  {setEmotion(goon)}
+                </p>
                 <TextField
                   id="standard_search"
                   onChange={(e) => handleChange(e, "username")}
