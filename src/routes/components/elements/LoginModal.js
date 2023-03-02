@@ -25,6 +25,7 @@ function LoginModal() {
   const [goon, setGoon] = useState(null);
   const [age, setAge] = useState(null);
   const [point, setPoint] = useState(null);
+  const [profilecolor, setProfilecolor] = useState("#fff");
 
   useEffect(() => {
     fetch("/api/logininfo")
@@ -60,11 +61,15 @@ function LoginModal() {
   };
 
   const handlepalleteOpen = () => {
-    setPallete(true);
+    setPallete(!pallete);
   };
 
   const handlepalleteClose = () => {
     setPallete(false);
+  };
+
+  const handleChangeComplete = (color, event) => {
+    setProfilecolor(color.hex);
   };
 
   const handleSummit = (event) => {
@@ -159,7 +164,10 @@ function LoginModal() {
             TransitionComponent={Transition}
           >
             <DialogContent style={{ width: "450px", padding: "0" }}>
-              <header className={styles.header}>
+              <header
+                className={styles.header}
+                style={{ backgroundColor: profilecolor }}
+              >
                 <Button
                   variant="contained"
                   className={styles.pallete}
@@ -168,13 +176,14 @@ function LoginModal() {
                 >
                   🛠️
                 </Button>
-                <div
-                  open={pallete}
-                  onClose={handlepalleteClose}
-                  TransitionComponent={Transition}
-                >
-                  <GithubPicker />
-                </div>
+                {pallete ? (
+                  <GithubPicker
+                    triangle="hide"
+                    onChangeComplete={handleChangeComplete}
+                  />
+                ) : (
+                  <div></div>
+                )}
                 <img
                   className={styles.profileimg}
                   src={`https://cdn.discordapp.com/avatars/${id}/${avatar}.jpg`}
