@@ -177,10 +177,20 @@ function LoginModal() {
                   🛠️
                 </Button>
                 {pallete ? (
-                  <GithubPicker
-                    triangle="hide"
-                    onChangeComplete={handleChangeComplete}
-                  />
+                  <div
+                    style={{
+                      position: "absolute",
+                      right: "0",
+                      top: "35px",
+                      // border: "2px solid red",
+                      transition: "all 2s",
+                    }}
+                  >
+                    <GithubPicker
+                      triangle="hide"
+                      onChangeComplete={handleChangeComplete}
+                    />
+                  </div>
                 ) : (
                   <div></div>
                 )}
