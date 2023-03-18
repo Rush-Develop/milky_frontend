@@ -4,6 +4,8 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Section from "./components/Section";
 import TopButton from "./components/elements/TopButton";
+import Calendar from "./components/Calender";
+import Rank from "./components/Rank";
 
 function Home() {
   return (
@@ -12,7 +14,9 @@ function Home() {
       <div className={styles.grid}>
         <div className={styles.Main}>
           <div id="1">
-            <Section cnt="1" />
+            <div className={styles.section}>
+              <Rank />
+            </div>
           </div>
           <div id="2">
             <Section cnt="2" />

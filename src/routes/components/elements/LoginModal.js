@@ -54,6 +54,9 @@ function LoginModal() {
 
   const handleClickOpen = () => {
     setOpen(true);
+    if (pallete == true) {
+      setPallete(!pallete);
+    }
   };
 
   const handleClose = () => {
@@ -62,10 +65,6 @@ function LoginModal() {
 
   const handlepalleteOpen = () => {
     setPallete(!pallete);
-  };
-
-  const handlepalleteClose = () => {
-    setPallete(false);
   };
 
   const handleChangeComplete = (color, event) => {
@@ -169,9 +168,9 @@ function LoginModal() {
                 style={{ backgroundColor: profilecolor }}
               >
                 <Button
-                  variant="contained"
-                  className={styles.pallete}
-                  sx={{ position: "absolute", right: "0" }}
+                  variant="text"
+                  // className={styles.pallete}
+                  sx={{ position: "absolute", right: "0", color: "white" }}
                   onClick={handlepalleteOpen}
                 >
                   🛠️

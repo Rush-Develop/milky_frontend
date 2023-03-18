@@ -121,7 +121,7 @@
   overflow: hidden;
 }
 
-.pallete {
+/* .pallete {
   vertical-align: middle;
   text-align: center;
   text-decoration: none;
@@ -129,7 +129,7 @@
   background-color: rgba(0, 0, 0, 0);
   overflow: hidden;
   z-index: 99;
-}
+} */
 
 .header {
   background-color: skyblue;
