@@ -46,6 +46,7 @@ function LoginModal() {
         setGoon(data.goon);
         setAge(data.age);
         setPoint(data.point);
+        setProfilecolor(data.pcolor);
       })
       .catch((error) => {
         console.log(`error: ${error}`);
@@ -73,7 +74,14 @@ function LoginModal() {
 
   const handleSummit = (event) => {
     event.preventDefault();
-    const userdata = { id: id, name: username, age: age, goon: goon };
+    console.log(profilecolor);
+    const userdata = {
+      id: id,
+      name: username,
+      age: age,
+      goon: goon,
+      pcolor: profilecolor,
+    };
     console.log(userdata);
     fetch(`/api/member/update/${id}`, {
       method: "POST",
